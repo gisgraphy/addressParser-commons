@@ -1,0 +1,1 @@
+Common files shared between [Address parser](http://address-parser.net) and [Gisgraphy](http://www.gisgraphy.com)
