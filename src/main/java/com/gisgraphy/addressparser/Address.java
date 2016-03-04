@@ -128,6 +128,20 @@ public class Address implements Serializable {
     private Double distance;
     //41
     private Double ward;
+    //42
+    private String adm1Name;
+    //43
+    private String adm2Name;
+    //44
+    private String adm3Name;
+    //45
+    private String adm4Name;
+    //46
+    private String adm5Name;
+    
+    private String formatedFull;
+    
+    private String formatedPostal;
     
     public String getCountry() {
         return country;
@@ -447,6 +461,47 @@ public class Address implements Serializable {
 	PostOfficeBox = postOfficeBox;
     }
 
+    public String getAdm1Name() {
+		return adm1Name;
+	}
+
+	public void setAdm1Name(String adm1Name) {
+		this.adm1Name = adm1Name;
+	}
+
+	public String getAdm2Name() {
+		return adm2Name;
+	}
+
+	public void setAdm2Name(String adm2Name) {
+		this.adm2Name = adm2Name;
+	}
+
+	public String getAdm3Name() {
+		return adm3Name;
+	}
+
+	public void setAdm3Name(String adm3Name) {
+		this.adm3Name = adm3Name;
+	}
+
+	public String getAdm4Name() {
+		return adm4Name;
+	}
+
+	public void setAdm4Name(String adm4Name) {
+		this.adm4Name = adm4Name;
+	}
+
+	public String getAdm5Name() {
+		return adm5Name;
+	}
+
+	public void setAdm5Name(String adm5Name) {
+		this.adm5Name = adm5Name;
+	}
+
+    
     /**
      * Try to determine it if not set, otherwise, return the seted value
      * @return the geocodingLevel
@@ -491,6 +546,16 @@ public class Address implements Serializable {
 				* result
 				+ ((StreetTypeIntersection == null) ? 0
 						: StreetTypeIntersection.hashCode());
+		result = prime * result
+				+ ((adm1Name == null) ? 0 : adm1Name.hashCode());
+		result = prime * result
+				+ ((adm2Name == null) ? 0 : adm2Name.hashCode());
+		result = prime * result
+				+ ((adm3Name == null) ? 0 : adm3Name.hashCode());
+		result = prime * result
+				+ ((adm4Name == null) ? 0 : adm4Name.hashCode());
+		result = prime * result
+				+ ((adm5Name == null) ? 0 : adm5Name.hashCode());
 		result = prime * result + ((block == null) ? 0 : block.hashCode());
 		result = prime * result + ((city == null) ? 0 : city.hashCode());
 		result = prime * result
@@ -561,6 +626,7 @@ public class Address implements Serializable {
 				+ ((suiteNumber == null) ? 0 : suiteNumber.hashCode());
 		result = prime * result
 				+ ((suiteType == null) ? 0 : suiteType.hashCode());
+		result = prime * result + ((ward == null) ? 0 : ward.hashCode());
 		result = prime * result + ((zipCode == null) ? 0 : zipCode.hashCode());
 		return result;
 	}
@@ -598,6 +664,31 @@ public class Address implements Serializable {
 			if (other.StreetTypeIntersection != null)
 				return false;
 		} else if (!StreetTypeIntersection.equals(other.StreetTypeIntersection))
+			return false;
+		if (adm1Name == null) {
+			if (other.adm1Name != null)
+				return false;
+		} else if (!adm1Name.equals(other.adm1Name))
+			return false;
+		if (adm2Name == null) {
+			if (other.adm2Name != null)
+				return false;
+		} else if (!adm2Name.equals(other.adm2Name))
+			return false;
+		if (adm3Name == null) {
+			if (other.adm3Name != null)
+				return false;
+		} else if (!adm3Name.equals(other.adm3Name))
+			return false;
+		if (adm4Name == null) {
+			if (other.adm4Name != null)
+				return false;
+		} else if (!adm4Name.equals(other.adm4Name))
+			return false;
+		if (adm5Name == null) {
+			if (other.adm5Name != null)
+				return false;
+		} else if (!adm5Name.equals(other.adm5Name))
 			return false;
 		if (block == null) {
 			if (other.block != null)
@@ -772,6 +863,11 @@ public class Address implements Serializable {
 			if (other.suiteType != null)
 				return false;
 		} else if (!suiteType.equals(other.suiteType))
+			return false;
+		if (ward == null) {
+			if (other.ward != null)
+				return false;
+		} else if (!ward.equals(other.ward))
 			return false;
 		if (zipCode == null) {
 			if (other.zipCode != null)
@@ -990,6 +1086,36 @@ public String toString() {
 		builder.append(distance);
 		builder.append(", ");
 	}
+	if (ward != null) {
+		builder.append("ward=");
+		builder.append(ward);
+		builder.append(", ");
+	}
+	if (adm1Name != null) {
+		builder.append("adm1Name=");
+		builder.append(adm1Name);
+		builder.append(", ");
+	}
+	if (adm2Name != null) {
+		builder.append("adm2Name=");
+		builder.append(adm2Name);
+		builder.append(", ");
+	}
+	if (adm3Name != null) {
+		builder.append("adm3Name=");
+		builder.append(adm3Name);
+		builder.append(", ");
+	}
+	if (adm4Name != null) {
+		builder.append("adm4Name=");
+		builder.append(adm4Name);
+		builder.append(", ");
+	}
+	if (adm5Name != null) {
+		builder.append("adm5Name=");
+		builder.append(adm5Name);
+		builder.append(", ");
+	}
 	if (PostOfficeBox != null) {
 		builder.append("PostOfficeBox=");
 		builder.append(PostOfficeBox);
@@ -1056,6 +1182,34 @@ public String toString() {
 
 	public void setWard(Double ward) {
 		this.ward = ward;
+	}
+
+	/**
+	 * @return the formatedFull
+	 */
+	public String getFormatedFull() {
+		return formatedFull;
+	}
+
+	/**
+	 * @param formatedFull the formatedFull to set
+	 */
+	public void setFormatedFull(String formatedFull) {
+		this.formatedFull = formatedFull;
+	}
+
+	/**
+	 * @return the formatedPostal
+	 */
+	public String getFormatedPostal() {
+		return formatedPostal;
+	}
+
+	/**
+	 * @param formatedPostal the formatedPostal to set
+	 */
+	public void setFormatedPostal(String formatedPostal) {
+		this.formatedPostal = formatedPostal;
 	}
 
 
