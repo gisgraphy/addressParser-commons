@@ -58,7 +58,7 @@ public class AddressResultsDto {
     public AddressResultsDto(List<Address> result, Long QTime) {
 	super();
 	this.result = result;
-	this.numFound = result == null ? 0 : result.size();
+	this.numFound = (result == null || containsOnlyNullItems(result)) ? 0 : result.size();
 	this.QTime = QTime;
     }
 
@@ -147,6 +147,18 @@ public class AddressResultsDto {
 	public void setParsedAddress(Address parsedAddress) {
 		this.parsedAddress = parsedAddress;
 	}
-
+	 static boolean containsOnlyNullItems(List list) {
+		 int count = 0;
+		if (list != null) {
+			for (int i = 0; i < list.size(); i++) {
+				if (list.get(i) == null) {
+					count ++;
+				}
+			}
+			return count == list.size();
+		}
+		return false;
+	}
+	
    
 }

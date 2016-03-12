@@ -131,5 +131,14 @@ public class AddressResultsDtoTest {
 		    fail(e.getMessage());
 		}
 	    }
+	 
+	 @Test
+	 public void addANullAddressShouldReturnOresult(){
+		 List<Address> addresses = new ArrayList<Address>();
+		 addresses.add(null);
+		 AddressResultsDto dto = new AddressResultsDto(addresses, 3L);
+		 Assert.assertEquals(0, dto.getNumFound());
+		 
+	 }
 	
 }
