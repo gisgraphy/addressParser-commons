@@ -64,7 +64,7 @@ public class Address implements Serializable {
     /**
      * for canada, and more
      */
-    //11
+    //11 unused ?
     private String civicNumberSuffix;
     //12
     private String preDirection;
@@ -90,7 +90,7 @@ public class Address implements Serializable {
     private String suiteNumber;
     //23
     private String floor;
-    //24
+    //24 unused ?
     private String quarter;
     //25
     private String zipCode;
@@ -104,7 +104,7 @@ public class Address implements Serializable {
     private String citySubdivision;
     //30
     private String postTown;
-    //31
+    //31 //can be island for specific case
     private String state;
     //32
     private String prefecture;//mainly for china and japan
@@ -142,6 +142,23 @@ public class Address implements Serializable {
     private String formatedFull;
     
     private String formatedPostal;
+    
+    private Integer lanes;
+    
+    private Boolean toll;
+    
+    private String surface;
+    
+    private String speedMode;
+    
+    private String maxSpeed;
+    
+    private String maxSpeedBackward;
+    
+    private Integer azimuthStart;
+    
+    private Integer azimuthEnd;
+    
     
     public String getCountry() {
         return country;
@@ -499,6 +516,117 @@ public class Address implements Serializable {
 
 	public void setAdm5Name(String adm5Name) {
 		this.adm5Name = adm5Name;
+	}
+	/**
+	 * @return the lanes
+	 */
+	public Integer getLanes() {
+		return lanes;
+	}
+
+	/**
+	 * @param lanes the lanes to set
+	 */
+	public void setLanes(Integer lanes) {
+		this.lanes = lanes;
+	}
+
+	/**
+	 * @return the toll
+	 */
+	public Boolean isToll() {
+		return toll;
+	}
+
+	/**
+	 * @param toll the toll to set
+	 */
+	public void setToll(Boolean toll) {
+		this.toll = toll;
+	}
+
+	/**
+	 * @return the surface
+	 */
+	public String getSurface() {
+		return surface;
+	}
+
+	/**
+	 * @param surface the surface to set
+	 */
+	public void setSurface(String surface) {
+		this.surface = surface;
+	}
+
+	/**
+	 * @return the speedMode
+	 */
+	public String getSpeedMode() {
+		return speedMode;
+	}
+
+	/**
+	 * @param speedMode the speedMode to set
+	 */
+	public void setSpeedMode(String speedMode) {
+		this.speedMode = speedMode;
+	}
+
+	/**
+	 * @return the maxSpeed
+	 */
+	public String getMaxSpeed() {
+		return maxSpeed;
+	}
+
+	/**
+	 * @param maxSpeed the maxSpeed to set
+	 */
+	public void setMaxSpeed(String maxSpeed) {
+		this.maxSpeed = maxSpeed;
+	}
+
+	/**
+	 * @return the maxSpeedBackward
+	 */
+	public String getMaxSpeedBackward() {
+		return maxSpeedBackward;
+	}
+
+	/**
+	 * @param maxSpeedBackward the maxSpeedBackward to set
+	 */
+	public void setMaxSpeedBackward(String maxSpeedBackward) {
+		this.maxSpeedBackward = maxSpeedBackward;
+	}
+
+	/**
+	 * @return the azimuthStart
+	 */
+	public Integer getAzimuthStart() {
+		return azimuthStart;
+	}
+
+	/**
+	 * @param azimuthStart the azimuthStart to set
+	 */
+	public void setAzimuthStart(Integer azimuthStart) {
+		this.azimuthStart = azimuthStart;
+	}
+
+	/**
+	 * @return the azimuthEnd
+	 */
+	public Integer getAzimuthEnd() {
+		return azimuthEnd;
+	}
+
+	/**
+	 * @param azimuthEnd the azimuthEnd to set
+	 */
+	public void setAzimuthEnd(Integer azimuthEnd) {
+		this.azimuthEnd = azimuthEnd;
 	}
 
     

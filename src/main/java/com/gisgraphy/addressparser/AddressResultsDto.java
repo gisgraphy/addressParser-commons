@@ -46,7 +46,9 @@ public class AddressResultsDto {
     private Integer numFound = 0;
     private Long QTime = 0L;
     private Address parsedAddress = null;
-    private List<Address> result=new ArrayList<Address>();
+    private String attributions =  "http://www.gisgraphy.com/attributions.html";
+    
+	private List<Address> result=new ArrayList<Address>();
 
 
     /**
@@ -159,6 +161,13 @@ public class AddressResultsDto {
 		}
 		return false;
 	}
+	 
+	 /**
+	  * @return the attributions
+	  */
+	 public String getAttributions() {
+		 return attributions;
+	 }
 	
    
 }
