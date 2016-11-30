@@ -159,8 +159,40 @@ public class Address implements Serializable {
     
     private Integer azimuthEnd;
     
+    private Double length;
     
-    public String getCountry() {
+    private Boolean oneWay;
+    
+    
+    /**
+	 * @return the length
+	 */
+	public Double getLength() {
+		return length;
+	}
+
+	/**
+	 * @param length the length to set
+	 */
+	public void setLength(Double length) {
+		this.length = length;
+	}
+
+	/**
+	 * @return the oneWay
+	 */
+	public Boolean isOneWay() {
+		return oneWay;
+	}
+
+	/**
+	 * @param oneWay the oneWay to set
+	 */
+	public void setOneWay(Boolean oneWay) {
+		this.oneWay = oneWay;
+	}
+
+	public String getCountry() {
         return country;
     }
 
