@@ -48,6 +48,15 @@ public class AddressQuery {
     private boolean indent = DEFAULT_INDENTATION;
     private boolean standardize = false;
     private boolean geocode = false;
+    private int parsedAddressUnlockKey;
+
+	public int getParsedAddressUnlockKey() {
+		return parsedAddressUnlockKey;
+	}
+
+	public void setParsedAddressUnlockKey(int parsedAddressUnlockKey) {
+		this.parsedAddressUnlockKey = parsedAddressUnlockKey;
+	}
 
 	public OutputFormat getFormat() {
 	return format;
