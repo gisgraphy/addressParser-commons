@@ -26,6 +26,7 @@ import java.util.regex.Pattern;
 import org.apache.log4j.Logger;
 
 import com.gisgraphy.serializer.common.OutputFormat;
+import com.vividsolutions.jts.geom.Point;
 
 /**
  * Represent an unstructured address (as string).
@@ -49,6 +50,79 @@ public class AddressQuery {
     private boolean standardize = false;
     private boolean geocode = false;
     private int parsedAddressUnlockKey;
+    
+    /**
+     * Default radius in meters
+     */
+    public static final double DEFAULT_RADIUS = 100000;
+    private Point point;
+    private double radius = DEFAULT_RADIUS;
+    
+    private boolean fuzzy = true;
+    
+    
+    /**
+     * @param point
+     *                The point to search around
+     *                @see #withRadius(double)
+     */
+    public AddressQuery around(Point point) {
+	    this.point = point;
+	    return this;
+    }
+    
+    /**
+     * @return The radius
+     */
+    public Point getPoint() {
+    	return this.point;
+    }
+    
+    /**
+     * @return The latitude (north-south) .
+     * @see #getLongitude()
+     */
+    public Double getLatitude() {
+	Double latitude = null;
+	if (this.point != null) {
+	    latitude = this.point.getY();
+	}
+	return latitude;
+    }
+
+    /**
+     * @return Returns the longitude (east-West).
+     * @see #getLongitude()
+     */
+    public Double getLongitude() {
+	Double longitude = null;
+	if (this.point != null) {
+	    longitude = this.point.getX();
+	}
+	return longitude;
+    }
+    /**
+     * @param radius
+     *                The radius to set in meters. Limit the query to the specified
+     *                radius, if the radius is <=0 , it will be set to the
+     *                default radius.
+     */
+    public AddressQuery withRadius(double radius) {
+	if (radius < 0) {
+	    this.radius = DEFAULT_RADIUS;
+	} else {
+	    this.radius = radius;
+	}
+	return this;
+    }
+    
+    /**
+     * @return The radius
+     */
+    public double getRadius() {
+	return this.radius;
+    }
+    
 
 	public int getParsedAddressUnlockKey() {
 		return parsedAddressUnlockKey;
@@ -165,6 +239,21 @@ public class AddressQuery {
 
 	public void setGeocode(boolean geocode) {
 		this.geocode = geocode;
+	}
+	
+	/**
+	 * @return true if the fulltext query is in fuzzy mode
+	 */
+	public boolean isFuzzy() {
+		return fuzzy;
+	}
+
+	/**
+	 * @param suggest whether the fulltext query is fuzzy
+	 */
+	public AddressQuery withFuzzy(boolean fuzzy) {
+		this.fuzzy = fuzzy;
+		return this;
 	}
 
 }
