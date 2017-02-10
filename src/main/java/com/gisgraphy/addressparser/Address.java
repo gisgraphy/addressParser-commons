@@ -163,8 +163,24 @@ public class Address implements Serializable {
     
     private Boolean oneWay;
     
+    private Float score;
+    
     
     /**
+	 * @return the score
+	 */
+	public Float getScore() {
+		return score;
+	}
+
+	/**
+	 * @param score the score to set
+	 */
+	public void setScore(Float score) {
+		this.score = score;
+	}
+
+	/**
 	 * @return the length
 	 */
 	public Double getLength() {
