@@ -29,6 +29,6 @@ package com.gisgraphy.addressparser.commons;
  */
 public enum GeocodingLevels {
 	
-	NONE,HOUSE_NUMBER,STREET,CITY,STATE,COUNTRY
+	NONE,HOUSE_NUMBER,STREET,CITY,STATE,COUNTRY,CITY_SUBDIVISION
 
 }

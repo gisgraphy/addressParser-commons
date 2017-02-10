@@ -687,24 +687,27 @@ public class Address implements Serializable {
 	return this.geocodingLevel;
 	
     }
-    
+
     private GeocodingLevels calculateGeocodingLevel(){
-	if (houseNumber!=null){
-	    return GeocodingLevels.HOUSE_NUMBER;
-	}
-	if (streetName!=null || streetType!=null){
-	    return GeocodingLevels.STREET;
-	}
-	if (city != null || dependentLocality != null || zipCode!=null){
-	    return GeocodingLevels.CITY;
-	}
-	if (state!=null || district!=null){
-	    return GeocodingLevels.STATE;
-	}
-	if (country!=null){
-	    return GeocodingLevels.COUNTRY;
-	}
-	return GeocodingLevels.NONE;
+    	if (houseNumber!=null){
+    		return GeocodingLevels.HOUSE_NUMBER;
+    	}
+    	if (streetName!=null || streetType!=null){
+    		return GeocodingLevels.STREET;
+    	}
+    	if (citySubdivision!=null || quarter != null){
+    		return GeocodingLevels.CITY_SUBDIVISION;
+    	}
+    	if (city != null || dependentLocality != null || zipCode!=null){
+    		return GeocodingLevels.CITY;
+    	}
+    	if (state!=null || district!=null){
+    		return GeocodingLevels.STATE;
+    	}
+    	if (country!=null){
+    		return GeocodingLevels.COUNTRY;
+    	}
+    	return GeocodingLevels.NONE;
     }
 
     @Override
