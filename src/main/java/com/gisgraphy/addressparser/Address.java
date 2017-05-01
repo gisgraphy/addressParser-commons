@@ -149,7 +149,9 @@ public class Address implements Serializable {
     
     private String surface;
     
-    private String speedMode;
+    private String streetRef;
+    
+   	private String speedMode;
     
     private String maxSpeed;
     
@@ -748,6 +750,8 @@ public class Address implements Serializable {
 		result = prime * result + ((country == null) ? 0 : country.hashCode());
 		result = prime * result
 				+ ((countryCode == null) ? 0 : countryCode.hashCode());
+		result = prime * result
+				+ ((streetRef == null) ? 0 : streetRef.hashCode());
 		result = prime
 				* result
 				+ ((dependentLocality == null) ? 0 : dependentLocality
@@ -1032,6 +1036,11 @@ public class Address implements Serializable {
 			if (other.streetType != null)
 				return false;
 		} else if (!streetType.equals(other.streetType))
+			return false;
+		if (streetRef == null) {
+			if (other.streetRef != null)
+				return false;
+		} else if (!streetRef.equals(other.streetRef))
 			return false;
 		if (suiteNumber == null) {
 			if (other.suiteNumber != null)
@@ -1389,6 +1398,20 @@ public String toString() {
 	 */
 	public void setFormatedPostal(String formatedPostal) {
 		this.formatedPostal = formatedPostal;
+	}
+	
+	/**
+	 * @return the streetRef
+	 */
+	public String getStreetRef() {
+		return streetRef;
+	}
+
+	/**
+	 * @param streetRef the streetRef to set
+	 */
+	public void setStreetRef(String streetRef) {
+		this.streetRef = streetRef;
 	}
 
 
