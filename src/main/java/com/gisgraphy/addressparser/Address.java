@@ -167,8 +167,25 @@ public class Address implements Serializable {
     
     private Float score;
     
+    private Long sourceId;
+    
     
     /**
+	 * @return the sourceId
+	 */
+	public Long getSourceId() {
+		return sourceId;
+	}
+
+	/**
+	 * @param sourceId the sourceId to set
+	 */
+	public void setSourceId(Long sourceId) {
+		this.sourceId = sourceId;
+	}
+
+
+	/**
 	 * @return the score
 	 */
 	public Float getScore() {
