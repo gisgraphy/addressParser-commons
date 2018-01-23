@@ -37,7 +37,7 @@ import com.vividsolutions.jts.geom.Point;
 public class AddressQuery {
 
     public final static boolean DEFAULT_INDENTATION = false;
-    public static int DEFAULT_LIMIT = 10;
+    public static final int DEFAULT_LIMIT = 10;
     private static Pattern callbackValidationPattern = Pattern.compile("\\w+");
     private static Logger logger = Logger.getLogger(AddressQuery.class);
 
