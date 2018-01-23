@@ -109,6 +109,19 @@ public class AddressQueryTest {
    Assert.assertEquals("doIt",query.getCallback());
     }
     
+    @Test
+    public void limitNumerOfResult(){
+    	 AddressQuery query =new AddressQuery("foo","bar");
+    	 Assert.assertEquals(AddressQuery.DEFAULT_LIMIT,query.getLimitNbResult());
+    	 query.limitNbResult(-1);
+    	 Assert.assertEquals(AddressQuery.DEFAULT_LIMIT,query.getLimitNbResult());
+    	 query.limitNbResult(2);
+    	 Assert.assertEquals(2,query.getLimitNbResult());
+    	 query.limitNbResult(0);
+    	 Assert.assertEquals("limit should be unchanged",2,query.getLimitNbResult());
+    	 
+    }
+    
   
 
 }

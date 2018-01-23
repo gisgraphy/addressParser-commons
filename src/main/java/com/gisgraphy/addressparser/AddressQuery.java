@@ -37,6 +37,7 @@ import com.vividsolutions.jts.geom.Point;
 public class AddressQuery {
 
     public final static boolean DEFAULT_INDENTATION = false;
+    public static int DEFAULT_LIMIT = 10;
     private static Pattern callbackValidationPattern = Pattern.compile("\\w+");
     private static Logger logger = Logger.getLogger(AddressQuery.class);
 
@@ -50,6 +51,7 @@ public class AddressQuery {
     private boolean standardize = false;
     private boolean geocode = false;
     private int parsedAddressUnlockKey;
+    private int limitNbResult = DEFAULT_LIMIT;
     
     /**
      * Default radius in meters
@@ -183,8 +185,26 @@ public class AddressQuery {
     public void setIndent(boolean indent) {
 	this.indent = indent;
     }
+    
+    
 
-    @Override
+    /**
+	 * @return the limit
+	 */
+	public int getLimitNbResult() {
+		return limitNbResult;
+	}
+
+	/**
+	 * @param limit the limit to set
+	 */
+	public void limitNbResult(int limit) {
+		if (limit >=1){
+			this.limitNbResult = limit;
+		}
+	}
+
+	@Override
 	public String toString() {
 		return "AddressQuery [address=" + address + ", apikey=" + apikey + ", country=" + country + 
 				", format=" + format + ", standardize=" + standardize + ", callback=" + callback + 

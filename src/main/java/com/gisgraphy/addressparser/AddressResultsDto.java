@@ -77,10 +77,17 @@ public class AddressResultsDto {
     public List<Address> getResult() {
 	return result;
     }
-
-   
+    
+      
 
     /**
+	 * @param result the result to set
+	 */
+	public void setResult(List<Address> result) {
+		this.result = result;
+	}
+
+	/**
      * @return the numFound
      */
     public int getNumFound() {
