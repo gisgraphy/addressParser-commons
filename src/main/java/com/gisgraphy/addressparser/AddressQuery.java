@@ -208,7 +208,7 @@ public class AddressQuery {
 	public String toString() {
 		return "AddressQuery [address=" + address + ", apikey=" + apikey + ", country=" + country + 
 				", format=" + format + ", standardize=" + standardize + ", callback=" + callback + 
-				", postal=" + postal + ", indent=" + indent + "]";
+				", postal=" + postal + ", indent=" + indent + ", fuzzy=" + fuzzy + "]";
 	}
 
     protected AddressQuery(){
