@@ -122,6 +122,12 @@ public class AddressQueryTest {
     	 
     }
     
+    @Test
+    public void fuzzyShouldBeDisabledByDefault(){
+        AddressQuery query =new AddressQuery("foo","bar");
+        Assert.assertFalse(query.isFuzzy());
+    }
+    
   
 
 }

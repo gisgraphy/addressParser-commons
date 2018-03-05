@@ -60,7 +60,7 @@ public class AddressQuery {
     private Point point;
     private double radius = DEFAULT_RADIUS;
     
-    private boolean fuzzy = true;
+    private boolean fuzzy = false;
     
     
     /**
@@ -275,5 +275,6 @@ public class AddressQuery {
 		this.fuzzy = fuzzy;
 		return this;
 	}
+	
 
 }
