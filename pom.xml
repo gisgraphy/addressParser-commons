@@ -44,14 +44,14 @@
 		<dependency>
 			<groupId>com.gisgraphy</groupId>
 			<artifactId>universalserialiser</artifactId>
-			<version>3.0</version>
+			<version>5.0</version>
 			<type>jar</type>
 			<scope>compile</scope>
 		</dependency>
 		<dependency>
 			<groupId>com.gisgraphy</groupId>
 			<artifactId>universalserialiser-commons</artifactId>
-			<version>3.0</version>
+			<version>5.0</version>
 			<type>jar</type>
 			<scope>compile</scope>
 		</dependency>
