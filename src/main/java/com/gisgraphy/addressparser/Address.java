@@ -169,7 +169,23 @@ public class Address implements Serializable {
     
     private Long sourceId;
     
+    private String county;
     
+    
+    /**
+     * @return the county
+     */
+    public String getCounty() {
+        return county;
+    }
+
+    /**
+     * @param county the county to set
+     */
+    public void setCounty(String county) {
+        this.county = county;
+    }
+
     /**
 	 * @return the sourceId
 	 */
